@@ -17,5 +17,42 @@ function computerPlay() {
             return 'scissors';
             break;
     }
+}
 
+//Defining the player selection and computer selection
+//let playerSelection = prompt('Choose your weapon:\nrock\npaper\nscissors');
+const playerSelection = 'rock';
+const computerSelection = computerPlay();
+
+
+//Function for a single round of Rock Paper Scissors against computer
+function playRound(playerSelection, computerSelection) {
+    switch (playerSelection) {
+        case 'rock':
+            if (computerSelection == 'rock') {
+                return ('It is a tie');
+            } else if (computerSelection == 'paper') {
+                return ('Computer wins');
+            } else {
+                return ('You win');
+            }
+        case 'paper':
+            if (computerSelection == 'paper') {
+                return ('It is a tie');
+            } else if (computerSelection == 'scissors') {
+                return ('Computer wins');
+            } else {
+                return ('You win');
+            }
+        case 'scissors':
+            if (computerSelection == 'scissors') {
+                return ('It is a tie');
+            } else if (computerSelection == 'rock') {
+                return ('Computer wins');
+            } else {
+                return ('You win');
+            }
+        default:
+            console.log("No valid choice was entered");
+    }
 }
