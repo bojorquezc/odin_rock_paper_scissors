@@ -1,7 +1,7 @@
 /* The odin project - Rock paper scissors game*/
 
 //Function for the computer to return 1 of 3 values (rock, paper or scissor)
-function computerPlay() {
+function getComputerChoice() {
     //A variable needs to be created to store a random number from 0 to 2
     let computerChoice = Math.floor(Math.random() * 3);
     //The number then needs to be compared to a list of 3 options
@@ -21,8 +21,8 @@ function computerPlay() {
 
 //Defining the player selection and computer selection
 //let playerSelection = prompt('Choose your weapon:\nrock\npaper\nscissors');
-const playerSelection = 'rock';
-const computerSelection = computerPlay();
+const playerSelection = '';
+const computerSelection = getComputerChoice();
 
 
 //Function for a single round of Rock Paper Scissors against computer
@@ -54,5 +54,12 @@ function playRound(playerSelection, computerSelection) {
             }
         default:
             console.log("No valid choice was entered");
+    }
+}
+
+// Playing a game of 5 rounds
+function game() {
+    for (i = 0; i < 5; i++) {
+        console.log(playRound(prompt("Choose rock, paper or scissors", playerSelection), computerSelection));
     }
 }
