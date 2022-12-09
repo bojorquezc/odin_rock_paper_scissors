@@ -19,12 +19,6 @@ function getComputerChoice() {
     }
 }
 
-//Defining the player selection and computer selection
-//let playerSelection = prompt('Choose your weapon:\nrock\npaper\nscissors');
-const playerSelection = '';
-const computerSelection = getComputerChoice();
-
-
 //Function for a single round of Rock Paper Scissors against computer
 function playRound(playerSelection, computerSelection) {
     switch (playerSelection) {
@@ -53,13 +47,37 @@ function playRound(playerSelection, computerSelection) {
                 return ('You win');
             }
         default:
-            console.log("No valid choice was entered");
+            console.log('No valid choice was entered');
     }
 }
 
-// Playing a game of 5 rounds
+//Function to play 5 games and log the score
 function game() {
+    // Initial variable that will let us keep track of the score
+    let gameScorePlayer = 0;
+    let gameScoreComputer = 0;
+    let gameDraws = 0;
+
+    //Loop that plays the 5 games and increases each of the initial variables, depending if a game was won, lost or if it was tied
     for (i = 0; i < 5; i++) {
-        console.log(playRound(prompt("Choose rock, paper or scissors", playerSelection), computerSelection));
+        const playerSelection = prompt('Choose rock, paper or scissors', ).toLowerCase();
+        const computerSelection = getComputerChoice();
+
+        if (playRound(playerSelection, computerSelection) == 'You win') {
+            gameScorePlayer += 1;
+        } else if (playRound(playerSelection, computerSelection) == 'Computer wins') {
+            gameScoreComputer += 1;
+        } else if (playRound(playerSelection, computerSelection) == 'It is a tie') {
+            gameDraws += 1;
+        } console.log(playRound(playerSelection, computerSelection) + `\nPlayer Chose: ${playerSelection} | Computer Chose: ${computerSelection}`+ `\nPlayer Score: ${gameScorePlayer}\nComputer Score: ${gameScoreComputer}\nDraws: ${gameDraws}`);
+    }
+
+    //Final result to show once the 5 games are played
+    if (gameScorePlayer > gameScoreComputer) {
+        console.log('\nPlayer Wins')
+    } else if (gameScoreComputer > gameScorePlayer) {
+        console.log('\nComputer Wins')
+    } else {
+        console.log('\nIt is a tie')
     }
 }
