@@ -1,4 +1,7 @@
 /* The odin project - Rock paper scissors game*/
+const rockButton = document.getElementById("rock-button");
+rockButton.addEventListener('click', playRound)
+
 
 //Function for the computer to return 1 of 3 values (rock, paper or scissor)
 function getComputerChoice() {
@@ -50,7 +53,6 @@ function playRound(playerSelection, computerSelection) {
             console.log('No valid choice was entered');
     }
 }
-
 
 //Function to play 5 games and log the score
 /*
