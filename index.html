@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>The Odin Project - Rock Paper Scissors Game</title>
-        <script src="./rps.js"></script>
-    </head>
-    <body>
 
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="TOP Rock, Paper, Scissors Game">
+    <meta name="author" content="Conrado Bojorquez">
+    <title>The Odin Project - Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./rps.js"></script>
+    <script src="https://kit.fontawesome.com/406a12ef4f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+</head>
+
+<body>
+    <header class="title_section">
+        <h1>Rock, Paper, Scissors</h1>
+        <p>Game of rock, paper, scissors against the computer.<br>
+            <em>First to five wins the game.</em>
+        </p>
+        <h2>Choose your weapon:</h2>
+    </header>
+
+    <div class="play_buttons">
+        <button id="rock"><i class="fa-solid fa-hand-back-fist fa-2xl"></i>Rock</button>
+        <button id="paper"><i class="fa-solid fa-hand fa-2xl"></i>Paper</button>
+        <button id="scissors"><i class="fa-solid fa-hand-scissors fa-2xl fa-rotate-90"></i>Scissors</button>
+    </div>
+
+    <div class="score">
+        <h2 class="title">SCORE</h2>
+    </div>
+
+    <div class="counters">
+        <h2>Player Score</h2>
+        <p class="player_score">0</p>
+        <p>:</p>
+        <h2>Computer Score</h2>
+        <p class="computer_score">0</p>
+    </div>
+
+</body>
+
 </html>

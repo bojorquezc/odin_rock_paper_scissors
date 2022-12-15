@@ -51,7 +51,9 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
 //Function to play 5 games and log the score
+/*
 function game() {
     // Initial variable that will let us keep track of the score
     let gameScorePlayer = 0;
@@ -60,7 +62,7 @@ function game() {
 
     //Loop that plays the 5 games and increases each of the initial variables, depending if a game was won, lost or if it was tied
     for (i = 0; i < 5; i++) {
-        const playerSelection = prompt('Choose rock, paper or scissors', ).toLowerCase();
+        const playerSelection = prompt('Choose rock, paper or scissors',).toLowerCase();
         const computerSelection = getComputerChoice();
 
         if (playRound(playerSelection, computerSelection) == 'You win') {
@@ -69,7 +71,7 @@ function game() {
             gameScoreComputer += 1;
         } else if (playRound(playerSelection, computerSelection) == 'It is a tie') {
             gameDraws += 1;
-        } console.log(playRound(playerSelection, computerSelection) + `\nPlayer Chose: ${playerSelection} | Computer Chose: ${computerSelection}`+ `\nPlayer Score: ${gameScorePlayer}\nComputer Score: ${gameScoreComputer}\nDraws: ${gameDraws}`);
+        } console.log(playRound(playerSelection, computerSelection) + `\nPlayer Chose: ${playerSelection} | Computer Chose: ${computerSelection}` + `\nPlayer Score: ${gameScorePlayer}\nComputer Score: ${gameScoreComputer}\nDraws: ${gameDraws}`);
     }
 
     //Final result to show once the 5 games are played
@@ -81,3 +83,4 @@ function game() {
         console.log('\nIt is a tie')
     }
 }
+*/
