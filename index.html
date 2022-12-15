@@ -14,6 +14,7 @@
 
 <body>
     <header class="title_section">
+        <i class="fa-sharp fa-solid fa-gamepad fa-4x"></i>
         <h1>Rock, Paper, Scissors</h1>
         <p>Game of rock, paper, scissors against the computer.<br>
             <em>First to five wins the game.</em>
@@ -21,23 +22,45 @@
         <h2>Choose your weapon:</h2>
     </header>
 
+<!--Buttons for interaction of users-->
     <div class="play_buttons">
         <button id="rock"><i class="fa-solid fa-hand-back-fist fa-2xl"></i>Rock</button>
         <button id="paper"><i class="fa-solid fa-hand fa-2xl"></i>Paper</button>
         <button id="scissors"><i class="fa-solid fa-hand-scissors fa-2xl fa-rotate-90"></i>Scissors</button>
     </div>
 
-    <div class="score">
-        <h2 class="title">SCORE</h2>
+
+<!--Selection per round showing what the user and computer chose-->
+    <div class="selections">
+        <div class="player_selection">
+            <h2>Player Chose</h2>
+            <p class="player_chose">Rock</p>
+        </div>
+        <div class="computer_selection">
+            <h2>Computer Chose</h2>
+            <p class="computer_chose">Rock</p>
+        </div>
     </div>
 
+<!--Scoreboard to track points-->
     <div class="counters">
-        <h2>Player Score</h2>
-        <p class="player_score">0</p>
-        <p>:</p>
-        <h2>Computer Score</h2>
-        <p class="computer_score">0</p>
+        <div class="counter_player">
+            <h2>Player Score</h2>
+            <p class="player_score">0</p>
+        </div>
+        <div class="counter_ties">
+            <h2>Ties</h2>
+            <p class="ties_score">0</p>
+        </div>
+        <div class="counter_computer">
+            <h2>Computer Score</h2>
+            <p class="computer_score">0</p>
+        </div>
     </div>
+
+    <footer>
+        <p>Copyright © The Odin Project 2022 | Created by Conrado Bojorquez</p>
+    </footer>
 
 </body>
 

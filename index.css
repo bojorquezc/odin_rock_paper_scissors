@@ -25,6 +25,7 @@ h1 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding-bottom: 50px;
 }
 
 .play_buttons i {
@@ -35,11 +36,11 @@ h1 {
 .play_buttons button {
     background-color: #8fbc8f;
     border: none;
-    color:#ffffff;
+    color: #ffffff;
     padding: 15px 30px;
     text-align: center;
     font-size: 18px;
-    font-weight: bold;    
+    font-weight: bold;
     margin: 0px 10px 0px 10px;
     width: 160px;
     cursor: pointer;
@@ -50,17 +51,31 @@ h1 {
     color: #a0d168;
 }
 
-.score {
-    padding-top: 30px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.counters p {
+.selections {
+    background-color: #777777;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    text-align: center;
+}
+
+.selections div {
+    padding: 0 20px 0 20px;
+    width: 200px;
+}
+
+.counters {
+    background-color: #b8b8b8;
+    color: #353535;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.counters p {
+    margin-block-start: 0%;
+    margin-block-end: 0%;
     font-size: 80px;
 }
 
@@ -68,5 +83,15 @@ h1 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    font-size: 30px;
+    font-size: 25px;
+}
+
+.counters div {
+    padding: 0 20px 0 20px;
+    width: 200px;
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
 }
