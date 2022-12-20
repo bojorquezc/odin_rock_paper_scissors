@@ -1,7 +1,4 @@
 /* The odin project - Rock paper scissors game*/
-const rockButton = document.getElementById("rock-button");
-rockButton.addEventListener('click', playRound)
-
 
 //Function for the computer to return 1 of 3 values (rock, paper or scissor)
 function getComputerChoice() {
@@ -17,10 +14,11 @@ function getComputerChoice() {
             return 'paper';
             break;
         case 2:
-            return 'scissors';
+            return 'scissors'
             break;
     }
 }
+
 
 //Function for a single round of Rock Paper Scissors against computer
 function playRound(playerSelection, computerSelection) {
@@ -54,35 +52,35 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-//Function to play 5 games and log the score
-/*
-function game() {
-    // Initial variable that will let us keep track of the score
-    let gameScorePlayer = 0;
-    let gameScoreComputer = 0;
-    let gameDraws = 0;
 
-    //Loop that plays the 5 games and increases each of the initial variables, depending if a game was won, lost or if it was tied
-    for (i = 0; i < 5; i++) {
-        const playerSelection = prompt('Choose rock, paper or scissors',).toLowerCase();
-        const computerSelection = getComputerChoice();
 
-        if (playRound(playerSelection, computerSelection) == 'You win') {
-            gameScorePlayer += 1;
-        } else if (playRound(playerSelection, computerSelection) == 'Computer wins') {
-            gameScoreComputer += 1;
-        } else if (playRound(playerSelection, computerSelection) == 'It is a tie') {
-            gameDraws += 1;
-        } console.log(playRound(playerSelection, computerSelection) + `\nPlayer Chose: ${playerSelection} | Computer Chose: ${computerSelection}` + `\nPlayer Score: ${gameScorePlayer}\nComputer Score: ${gameScoreComputer}\nDraws: ${gameDraws}`);
-    }
+function game(playerSelection) {
+    let playerScore = document.querySelector('player_score');
+    let computerScore = document.querySelector('computer_score');
+    let tiesScore = document.querySelector('ties_score');
+    const computerSelection = getComputerChoice();
+
+    if (playRound(playerSelection, computerSelection) == 'You win') {
+        playerScore += 1;
+    } else if (playRound(playerSelection, computerSelection) == 'Computer wins') {
+        computerScore += 1;
+    } else if (playRound(playerSelection, computerSelection) == 'It is a tie') {
+        tiesScore += 1;
+    } console.log(playRound(playerSelection, computerSelection) + `\nPlayer Chose: ${playerSelection} | Computer Chose: ${computerSelection}` + `\nPlayer Score: ${playerScore}\nComputer Score: ${computerScore}\nDraws: ${tiesScore}`);
 
     //Final result to show once the 5 games are played
-    if (gameScorePlayer > gameScoreComputer) {
+    if (playerScore > computerScore) {
         console.log('\nPlayer Wins')
-    } else if (gameScoreComputer > gameScorePlayer) {
+    } else if (computerScore > playerScore) {
         console.log('\nComputer Wins')
     } else {
         console.log('\nIt is a tie')
     }
 }
-*/
+
+
+const rockButton = document.getElementById("rock-button");
+rockButton.addEventListener('click', () => {
+    playerSelection = 'rock';
+    return game(playerSelection);
+});
