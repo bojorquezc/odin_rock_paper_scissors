@@ -7,7 +7,6 @@
     <meta name="author" content="Conrado Bojorquez">
     <title>The Odin Project - Rock Paper Scissors Game</title>
     <link rel="stylesheet" href="./index.css">
-    <script src="./rps.js" defer></script>
     <script src="https://kit.fontawesome.com/406a12ef4f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
 </head>
@@ -22,7 +21,7 @@
         <h2>Choose your weapon:</h2>
     </header>
 
-<!--Buttons for interaction of users-->
+    <!--Buttons for interaction of users-->
     <div class="play_buttons">
         <button id="rock-button"><i class="fa-solid fa-hand-back-fist fa-2xl"></i>Rock</button>
         <button id="paper-button"><i class="fa-solid fa-hand fa-2xl"></i>Paper</button>
@@ -30,19 +29,24 @@
     </div>
 
 
-<!--Selection per round showing what the user and computer chose-->
+    <!--Selection per round showing what the user and computer chose-->
     <div class="selections">
         <div class="player_selection">
             <h2>Player Chose</h2>
-            <p class="player_chose">Rock</p>
+            <p class="player_chose">-</p>
         </div>
         <div class="computer_selection">
             <h2>Computer Chose</h2>
-            <p class="computer_chose">Rock</p>
+            <p class="computer_chose">-</p>
         </div>
     </div>
 
-<!--Scoreboard to track points-->
+    <!--Winner message-->
+    <div class="winner_message"></div>
+    <!--Final score-->
+    <div class="final_score"></div>
+
+    <!--Scoreboard to track points-->
     <div class="counters">
         <div class="counter_player">
             <h2>Player Score</h2>
@@ -63,5 +67,6 @@
     </footer>
 
 </body>
+<script src="./rps.js" defer></script>
 
 </html>
