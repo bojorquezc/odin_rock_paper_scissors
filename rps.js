@@ -4,8 +4,6 @@
 function getComputerChoice() {
     //A variable needs to be created to store a random number from 0 to 2
     let computerChoice = Math.floor(Math.random() * 3);
-    //The number then needs to be compared to a list of 3 options
-    //Depending on the number randomly generated, we will return a value
     switch (computerChoice) {
         case 0:
             return 'rock';
@@ -89,6 +87,17 @@ const computerChose = document.querySelector('.computer_chose');
 const winnerMessage = document.querySelector('.winner_message');
 const finalScore = document.querySelector('.final_score');
 
+const winnerReset = document.querySelector('.winner_reset');
+
+const newGameButton = document.querySelector('.newgame_btn');
+newGameButton.addEventListener('click', () => {
+    gameScoreReset();
+    winnerReset.classList.add('winner_reset_on');
+    rockButton.disabled = false;
+    paperButton.disabled = false;
+    scissorsButton.disabled = false;
+});
+
 
 
 function game(playerSelection) {
@@ -106,32 +115,34 @@ function game(playerSelection) {
     } else if (playRound(playerSelection, computerSelection) == 'It is a tie') {
         tiesScoreCounter += 1;
         tiesScore.textContent = tiesScoreCounter;
-    } console.log(playRound(playerSelection, computerSelection) + `\nPlayer Chose: ${playerSelection} | Computer Chose: ${computerSelection}` + `\nPlayer Score: ${playerScoreCounter}\nComputer Score: ${computerScoreCounter}\nDraws: ${tiesScoreCounter}`);
+    } //console.log(playRound(playerSelection, computerSelection) + `\nPlayer Chose: ${playerSelection} | Computer Chose: ${computerSelection}` + `\nPlayer Score: ${playerScoreCounter}\nComputer Score: ${computerScoreCounter}\nDraws: ${tiesScoreCounter}`);
 
     //Final result to show once the 5 games are played
     if (playerScoreCounter == 5) {
         winnerMessage.textContent = 'You Win!';
-        winnerMessage.classList.add('winner_message_on');
         finalScore.textContent = `Final Score - Player:${playerScoreCounter} Computer:${computerScoreCounter}`;
-        finalScore.classList.add('final_score_on');
+        winnerReset.classList.remove('winner_reset_on');
+        newGameButton.classList.remove('newgame_btn_off');
+        gameScoreReset();
 
-        playerScoreCounter = 0;
-        playerScore.textContent = 0;
-        computerScoreCounter = 0;
-        computerScore.textContent = 0;
-        tiesScoreCounter = 0;
-        tiesScore.textContent = 0;
     } else if (computerScoreCounter == 5) {
         winnerMessage.textContent = 'Computer Wins!';
-        winnerMessage.classList.add('winner_message_on');
         finalScore.textContent = `Final Score - Player:${playerScoreCounter} Computer:${computerScoreCounter}`;
-        finalScore.classList.add('final_score_on');
+        winnerReset.classList.remove('winner_reset_on');
+        newGameButton.classList.remove('newgame_btn_off');
+        gameScoreReset();
 
-        playerScoreCounter = 0;
-        playerScore.textContent = 0;
-        computerScoreCounter = 0;
-        computerScore.textContent = 0;
-        tiesScoreCounter = 0;
-        tiesScore.textContent = 0;
     }
+}
+
+function gameScoreReset() {
+    playerScoreCounter = 0;
+    playerScore.textContent = 0;
+    computerScoreCounter = 0;
+    computerScore.textContent = 0;
+    tiesScoreCounter = 0;
+    tiesScore.textContent = 0;
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
 }
